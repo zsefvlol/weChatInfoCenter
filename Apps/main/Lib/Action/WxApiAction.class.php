@@ -119,9 +119,9 @@ class WxApiAction extends CommonAction
 	 */
 	private function verifyToken() {
 		$token = '';
-		$signature = addslashes(htmlspecialchars($_GET('signature')));
-		$timestamp = addslashes(htmlspecialchars($_GET('timestamp')));
-		$nonce = addslashes(htmlspecialchars($_GET('nonce')));
+		$signature = addslashes(htmlspecialchars($_GET['signature']));
+		$timestamp = addslashes(htmlspecialchars($_GET['timestamp']));
+		$nonce = addslashes(htmlspecialchars($_GET['nonce']));
 		$tmpArr = array(C('WX_TOKEN'), $timestamp, $nonce);
 		sort($tmpArr);
 		$tmpStr = implode($tmpArr);
