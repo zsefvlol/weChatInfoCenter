@@ -13,5 +13,6 @@ return array(
 
 	'APP_AUTOLOAD_PATH'=>'ORG.Util',
 
+	'WX_TOKEN'			=>	'hvVjiNmw2NKt3DhJ',
 );
 ?>
