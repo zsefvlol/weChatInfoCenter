@@ -4,7 +4,7 @@ class WxApiAction extends CommonAction
 
 	public function api(){
 		//验证Token
-		if(!$this->verifyToken()) exit('Token Verification Failed.');
+		//if(!$this->verifyToken()) exit('Token Verification Failed.');
 		//网站接入验证
 		if(isset($_GET['echostr'])) exit($_GET['echostr']);
 		//处理
