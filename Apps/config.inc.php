@@ -14,5 +14,7 @@ return array(
 	'APP_AUTOLOAD_PATH'=>'ORG.Util',
 
 	'WX_TOKEN'			=>	'hvVjiNmw2NKt3DhJ',
+	
+	'WX_DEFAULT_CONTENT'=>	'欢迎使用信息查询系统，本系统正在建设中。有问题联系zsefvlol@163.com',
 );
 ?>
