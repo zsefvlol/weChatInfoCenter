@@ -4,7 +4,7 @@ class WxApiAction extends CommonAction
 
 	public function api(){
 		//验证Token
-		if(!$this->verifyToken()) exit('Token Verification Failed.');
+		//if(!$this->verifyToken()) exit('Token Verification Failed.');
 		//网站接入验证
 		if(isset($_GET['echostr'])) exit($_GET['echostr']);
 		//处理
@@ -12,7 +12,8 @@ class WxApiAction extends CommonAction
 	}
 	
 	private function handleUserRequest(){
-		$str_post = $GLOBALS["HTTP_RAW_POST_DATA"];
+		$str_post = empty($GLOBALS['HTTP_RAW_POST_DATA']) ? file_get_contents('php://input') : $GLOBALS['HTTP_RAW_POST_DATA'];
+		var_dump($str_post);
 		if (!empty($str_post)) {
 			$request = simplexml_load_string($str_post, 'SimpleXMLElement', LIBXML_NOCDATA);
 			D('RawLog')->saveRawLog($request);

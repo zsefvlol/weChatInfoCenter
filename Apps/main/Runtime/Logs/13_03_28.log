@@ -57,3 +57,236 @@ NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\C
 NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
 NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
 
+[ 2013-03-28T17:57:11+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001813s ]
+
+[ 2013-03-28T17:57:13+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2013-03-28T17:57:13+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001288s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001533s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001607s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class EmptyAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Array to string conversion D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T17:57:40+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001278s ]
+
+[ 2013-03-28T17:57:43+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2013-03-28T17:57:43+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002852s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003096s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class EmptyAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Array to string conversion D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T17:57:44+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2013-03-28T17:57:44+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001473s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001712s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001323s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class EmptyAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Array to string conversion D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T17:57:44+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2013-03-28T17:57:44+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001453s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001688s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001188s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class EmptyAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Array to string conversion D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T17:58:25+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+
+[ 2013-03-28T18:00:39+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001453s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001773s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001190s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 15 行.
+NOTIC: [8] Undefined index: toUsername D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 64 行.
+
+[ 2013-03-28T18:06:04+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001430s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001663s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001198s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 15 行.
+NOTIC: [8] Undefined index: toUsername D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 64 行.
+
+[ 2013-03-28T18:06:57+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001421s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001675s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001187s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001386s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 15 行.
+NOTIC: [8] Undefined index: toUsername D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 64 行.
+
+[ 2013-03-28T18:08:21+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001510s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001767s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 15 行.
+NOTIC: [8] Undefined index: toUsername D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 64 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 65 行.
+
+[ 2013-03-28T18:09:13+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001236s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001485s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002098s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 15 行.
+NOTIC: [8] Undefined index: toUsername D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 64 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 65 行.
+
+[ 2013-03-28T18:13:48+08:00 ] ERR: [1] Class 'CommonModel' not found D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Model\CommonModel.class.php 第 2 行.
+[ 2013-03-28T18:15:36+08:00 ] ERR: (ThinkException) Access denied for user 'wxinfocenter'@'localhost' (using password: YES)
+[ 2013-03-28T18:15:36+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001043s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001265s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+NOTIC: [2] mysql_connect(): Access denied for user 'wxinfocenter'@'localhost' (using password: YES) D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class WxApiAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T18:22:01+08:00 ] ERR: (ThinkException) Access denied for user 'wxinfocenter'@'localhost' (using password: YES)
+[ 2013-03-28T18:22:01+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001601s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001859s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000964s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001148s ]
+NOTIC: [2] mysql_connect(): Access denied for user 'wxinfocenter'@'localhost' (using password: YES) D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class WxApiAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T18:23:07+08:00 ] ERR: (ThinkException) Access denied for user 'wxinfocenter'@'localhost' to database 'db_wechat_info_center'
+[ 2013-03-28T18:23:07+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002455s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002724s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001250s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class WxApiAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T18:23:51+08:00 ] ERR: (ThinkException) Access denied for user 'wxinfocenter'@'localhost' to database 'db_wechat_info_center'
+[ 2013-03-28T18:23:51+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001249s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001529s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001335s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class WxApiAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T18:26:18+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001418s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001660s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001284s ]
+SQL: SHOW COLUMNS FROM `tb_raw_log` [ RunTime:0.004373s ]
+SQL: INSERT INTO `tb_raw_log` (`rawData`) VALUES ('{\"ToUserName\":\"toUser\",\"FromUserName\":\"fromUser\",\"CreateTime\":\"1348831860\",\"MsgType\":\"text\",\"Content\":\"this is a test\",\"MsgId\":\"1234567890123456\"}') [ RunTime:0.039333s ]
+NOTIC: [8] Undefined index: msgType D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 65 行.
+

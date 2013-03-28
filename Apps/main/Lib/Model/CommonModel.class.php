@@ -1,5 +1,5 @@
 <?php
-class CommonModel extends CommonModel {
+class CommonModel extends Model {
 
 }
 ?>

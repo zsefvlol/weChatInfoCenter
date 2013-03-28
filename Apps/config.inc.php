@@ -4,7 +4,7 @@ return array(
     'URL_MODEL'         =>  3, // 如果你的环境不支持PATHINFO 请设置为3
 	'DB_TYPE'           =>  'mysql',
 	'DB_HOST'           =>  'localhost',
-	'DB_NAME'           =>  'DB_WECHAT_INFO_CENTER',
+	'DB_NAME'           =>  'db_wechat_info_center',
 	'DB_USER'           =>  'wxinfocenter',
 	'DB_PWD'            =>  'wxinfocenter!',
 	'DB_PORT'           =>  '3306',
