@@ -11,7 +11,6 @@ class RawLogModel extends CommonModel {
 				'rawData'		=>	json_encode(CommonAction::obj2array($request)),
 				);
 		$this->add($arr);
-		echo $this->getLastSql();
 	}
 }
 ?>
