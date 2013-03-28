@@ -34,6 +34,7 @@ class WxApiAction extends CommonAction
 		$result  = array(
 				'toUsername'	=>	$message->ToUserName,
 				'fromUsername'	=>	$message->FromUserName,
+				'arrContent'	=>	$message->__toString()
 		);
 		return $result;
 	}
@@ -42,6 +43,7 @@ class WxApiAction extends CommonAction
 		$result  = array(
 				'toUsername'	=>	$message->ToUserName,
 				'fromUsername'	=>	$message->FromUserName,
+				'arrContent'	=>	$message->__toString()
 		);
 		return $result;
 	}
