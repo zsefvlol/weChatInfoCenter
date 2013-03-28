@@ -14,7 +14,7 @@ class WxApiAction extends CommonAction
 	private function handleUserRequest(){
 		$str_post = empty($GLOBALS['HTTP_RAW_POST_DATA']) ? file_get_contents('php://input') : $GLOBALS['HTTP_RAW_POST_DATA'];
 		if (!empty($str_post)) {
-			$request = simplexml_load_string($str_post, 'SimpleXMLElement', LIBXML_NOCDATA);
+			$request = $this->obj2array(simplexml_load_string($str_post, 'SimpleXMLElement', LIBXML_NOCDATA));
 			D('RawLog')->saveRawLog($request);
 			switch($request->MsgType){
 				case 'text':
@@ -33,18 +33,18 @@ class WxApiAction extends CommonAction
 	
 	private function handleTextMessage($message){
 		$result  = array(
-				'toUsername'	=>	$message->ToUserName,
-				'fromUsername'	=>	$message->FromUserName,
-				'arrContent'	=>	array($message->__toString())
+				'toUsername'	=>	$message['ToUserName'],
+				'fromUsername'	=>	$message['FromUserName'],
+				'arrContent'	=>	array(json_encode($message))
 		);
 		return $result;
 	}
 	
 	private function handleLocationMessage($message){
 		$result  = array(
-				'toUsername'	=>	$message->ToUserName,
-				'fromUsername'	=>	$message->FromUserName,
-				'arrContent'	=>	array($message->__toString())
+				'toUsername'	=>	$message['ToUserName'],
+				'fromUsername'	=>	$message['FromUserName'],
+				'arrContent'	=>	array(json_encode($message))
 		);
 		return $result;
 	}
@@ -73,7 +73,7 @@ class WxApiAction extends CommonAction
 		$xmlResult .= '<MsgType><![CDATA[' . $msgType . ']]></MsgType>'; //text,music,news
 		switch ($msgType) {
 			case 'text' :
-				$value = isset($arrContent[0][0]) ? $arrContent[0][0] : "";
+				$value = isset($arrContent[0]) ? $arrContent[0] : "";
 				$xmlResult .= '<Content><![CDATA[' . $value . ']]></Content>'; //回复的消息内容
 				$xmlResult .= '<FuncFlag>0</FuncFlag>';
 				break;
