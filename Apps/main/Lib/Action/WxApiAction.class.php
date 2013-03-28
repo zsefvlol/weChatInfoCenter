@@ -8,7 +8,9 @@ class WxApiAction extends CommonAction
 		//网站接入验证
 		if(isset($_GET['echostr'])) exit($_GET['echostr']);
 		//处理
-		exit($this->getXmlResult($this->handleUserRequest()));
+		$result = $this->handleUserRequest();
+		echo $this->getXmlResult($result);
+		exit();
 	}
 	
 	private function handleUserRequest(){
@@ -16,7 +18,7 @@ class WxApiAction extends CommonAction
 		if (!empty($str_post)) {
 			$request = $this->obj2array(simplexml_load_string($str_post, 'SimpleXMLElement', LIBXML_NOCDATA));
 			D('RawLog')->saveRawLog($request);
-			switch($request->MsgType){
+			switch($request['MsgType']){
 				case 'text':
 					$result = $this->handleTextMessage($request);
 					break;
@@ -33,6 +35,7 @@ class WxApiAction extends CommonAction
 	
 	private function handleTextMessage($message){
 		$result  = array(
+				'msgType'		=>	'text',
 				'toUsername'	=>	$message['ToUserName'],
 				'fromUsername'	=>	$message['FromUserName'],
 				'arrContent'	=>	array(json_encode($message))
@@ -42,6 +45,7 @@ class WxApiAction extends CommonAction
 	
 	private function handleLocationMessage($message){
 		$result  = array(
+				'msgType'		=>	'text',
 				'toUsername'	=>	$message['ToUserName'],
 				'fromUsername'	=>	$message['FromUserName'],
 				'arrContent'	=>	array(json_encode($message))

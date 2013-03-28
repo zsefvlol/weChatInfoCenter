@@ -295,3 +295,63 @@ INFO: [ app_begin ] --START--
 INFO: Run ReadHtmlCache Behavior [ RunTime:0.003260s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.003514s ]
 
+[ 2013-03-28T19:03:53+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001442s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001682s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001312s ]
+SQL: SHOW COLUMNS FROM `tb_raw_log` [ RunTime:0.003873s ]
+SQL: INSERT INTO `tb_raw_log` (`fromUserName`,`toUserName`,`createTime`,`msgType`,`msgId`,`rawData`) VALUES ('fromUser','toUser',1348831860,'text','1234567890123456','{\"ToUserName\":\"toUser\",\"FromUserName\":\"fromUser\",\"CreateTime\":\"1348831860\",\"MsgType\":\"text\",\"Content\":\"this is a test\",\"MsgId\":\"1234567890123456\"}') [ RunTime:0.058067s ]
+NOTIC: [8] Undefined index: msgType D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 66 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 68 行.
+
+[ 2013-03-28T19:06:49+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001521s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001779s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `tb_raw_log` [ RunTime:0.004116s ]
+SQL: INSERT INTO `tb_raw_log` (`fromUserName`,`toUserName`,`createTime`,`msgType`,`msgId`,`rawData`) VALUES ('fromUser','toUser',1348831860,'text','1234567890123456','{\"ToUserName\":\"toUser\",\"FromUserName\":\"fromUser\",\"CreateTime\":\"1348831860\",\"MsgType\":\"text\",\"Content\":\"this is a test\",\"MsgId\":\"1234567890123456\"}') [ RunTime:0.052964s ]
+NOTIC: [8] Undefined index: msgType D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 66 行.
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 68 行.
+
+[ 2013-03-28T19:07:17+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001437s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001690s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001110s ]
+SQL: SHOW COLUMNS FROM `tb_raw_log` [ RunTime:0.005264s ]
+SQL: INSERT INTO `tb_raw_log` (`fromUserName`,`toUserName`,`createTime`,`msgType`,`msgId`,`rawData`) VALUES ('fromUser','toUser',1348831860,'text','1234567890123456','{\"ToUserName\":\"toUser\",\"FromUserName\":\"fromUser\",\"CreateTime\":\"1348831860\",\"MsgType\":\"text\",\"Content\":\"this is a test\",\"MsgId\":\"1234567890123456\"}') [ RunTime:0.044713s ]
+NOTIC: [8] Undefined index: MsgType D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 66 行.
+NOTIC: [8] Undefined index: ToUsername D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 67 行.
+NOTIC: [8] Undefined index: FromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 68 行.
+NOTIC: [8] Undefined index: ArrContent D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 69 行.
+
+[ 2013-03-28T19:08:38+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001127s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001367s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001277s ]
+SQL: SHOW COLUMNS FROM `tb_raw_log` [ RunTime:0.003882s ]
+SQL: INSERT INTO `tb_raw_log` (`fromUserName`,`toUserName`,`createTime`,`msgType`,`msgId`,`rawData`) VALUES ('fromUser','toUser',1348831860,'text','1234567890123456','{\"ToUserName\":\"toUser\",\"FromUserName\":\"fromUser\",\"CreateTime\":\"1348831860\",\"MsgType\":\"text\",\"Content\":\"this is a test\",\"MsgId\":\"1234567890123456\"}') [ RunTime:0.055783s ]
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 70 行.
+
+[ 2013-03-28T19:09:03+08:00 ] 127.0.0.1 /WxApi/api/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001530s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001843s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `tb_raw_log` [ RunTime:0.003959s ]
+SQL: INSERT INTO `tb_raw_log` (`fromUserName`,`toUserName`,`createTime`,`msgType`,`msgId`,`rawData`) VALUES ('fromUser','toUser',1348831860,'text','1234567890123456','{\"ToUserName\":\"toUser\",\"FromUserName\":\"fromUser\",\"CreateTime\":\"1348831860\",\"MsgType\":\"text\",\"Content\":\"this is a test\",\"MsgId\":\"1234567890123456\"}') [ RunTime:0.041468s ]
+NOTIC: [8] Undefined index: fromUserName D:\Projects\git\weChatInfoCenter\Apps\main\Lib\Action\WxApiAction.class.php 第 68 行.
+
