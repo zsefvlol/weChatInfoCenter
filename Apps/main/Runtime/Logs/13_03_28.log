@@ -1,0 +1,59 @@
+[ 2013-03-28T14:01:35+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2013-03-28T14:01:35+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002524s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class IndexAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Array to string conversion D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T14:01:37+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2013-03-28T14:01:37+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001546s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001816s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001741s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class EmptyAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Array to string conversion D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
+[ 2013-03-28T14:02:34+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001346s ]
+
+[ 2013-03-28T14:02:34+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2013-03-28T14:02:34+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001193s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001421s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001303s ]
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: file D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [8] Undefined index: line D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 62 行.
+NOTIC: [4096] Object of class EmptyAction could not be converted to string D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Array to string conversion D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 64 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: class D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+NOTIC: [8] Undefined index: type D:\Projects\git\weChatInfoCenter\ThinkPHP\Lib\Core\ThinkException.class.php 第 63 行.
+
