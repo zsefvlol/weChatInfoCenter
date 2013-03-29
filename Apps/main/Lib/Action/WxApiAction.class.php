@@ -2,6 +2,9 @@
 class WxApiAction extends CommonAction
 {
 
+	private static $FUNC_TYPE_WEATHER = 1;
+	private static $FUNC_TYPE_NEARBY = 2;
+	
 	public function api(){
 		//验证Token
 		if(!$this->verifyToken()) exit('Token Verification Failed.');
@@ -38,12 +41,35 @@ class WxApiAction extends CommonAction
 		return $result;
 	}
 	
+	/**
+	 * 处理文本信息
+	 * @param array $message
+	 * @return multitype:string unknown multitype:string
+	 */
 	private function handleTextMessage($message){
 		$content = explode(' ', $message['Content']);
-		if ($content[0] == '天气'){
-			vendor('Weather');
-			$info = Weather::getWeather($content[1]);
-		}else $info = json_encode($message);
+		switch ($content[0]){
+			case '天气' : 
+				if($content[1])	{
+					vendor('Weather');
+					$info = Weather::getWeather($content[1]);
+				}
+				else {
+					D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
+					$info = "请发送地理位置信息\n点下方小加号，选择“位置”";
+				}
+			break;
+			case '附近' :
+				if(!$content[1]) $info = "请输入商户类型\n如：附近 银行";
+				else{
+					D('Message')->saveMessage($message,self::$FUNC_TYPE_NEARBY,$content[1]);
+					$info = "请发送地理位置信息\n点下方小加号，选择“位置”";
+				}
+				break;
+			default :
+				$info = json_encode($message);
+			break;
+		}
 		$result  = array(
 				'msgType'		=>	'text',
 				'toUsername'	=>	$message['FromUserName'],
@@ -53,18 +79,44 @@ class WxApiAction extends CommonAction
 		);
 		return $result;
 	}
-	
+		
+	/**
+	 * 处理位置信息
+	 * @param array $message
+	 * @return multitype:string unknown multitype:string
+	 */
 	private function handleLocationMessage($message){
+		$lastMessage = D('Message')->getLastMessage($message);
+		switch ($lastMessage['funcType']){
+			case self::$FUNC_TYPE_NEARBY :
+				vendor('BaiduMap');
+				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastMessage['keyWord']);
+				break;
+			case self::$FUNC_TYPE_WEATHER :
+				vendor('BaiduMap');
+				vendor('Weather');
+				$city = BaiduMap::getCityByLocation($message['Location_X'], $message['Location_Y']);
+				if (!$city) $info = '未找到您所在的城市';
+				else $info = Weather::getWeather($city);
+				break;
+			default:
+				$info = json_encode($message);
+		}
 		$result  = array(
 				'msgType'		=>	'text',
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],
-				'arrContent'	=>	array(json_encode($message))
+				'arrContent'	=>	array($info)
 		);
 		return $result;
 	}
 
+	/**
+	 * 处理Event事件
+	 * @param array $message
+	 * @return multitype:string unknown multitype:Ambigous <mixed, void, NULL, multitype:>
+	 */
 	private function handleEventMessage($message){
 		$result  = array(
 				'msgType'		=>	'text',
@@ -77,7 +129,7 @@ class WxApiAction extends CommonAction
 	}	
 
 	/**
-	 * 获得xml模板结构
+	 * 输出xml结果
 	 * @input array(
 	 * 			'msgType'=>'text',
 	 * 			'toUsername'=>'xxx',
