@@ -5,6 +5,11 @@ class MessageModel extends CommonModel {
 		$message['rawData'] = json_encode($message);
 		$message['funcType'] = $funcType;
 		$message['keyWord'] = $keyWord;
+		$message['msgId'] = $message['MsgId'];
+		$message['fromUserName'] = $message['FromUserName'];
+		$message['toUserName'] = $message['ToUserName'];
+		$message['createTime'] = $message['CreateTime'];
+		$message['msgType'] = $message['MsgType'];
 		$this->getMessageModel($message['FromUserName'])->add($message);
 	}
 	
