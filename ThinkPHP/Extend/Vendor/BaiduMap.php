@@ -18,7 +18,8 @@ class BaiduMap{
 		foreach($apiResult['results'] as $k=>$v){
 			$message .= "\n\n" . $v['name'] . "\n" . $v['address'];
 			if ($v['telephone']) $message .= "\n" . $v['telephone'];
-			$message .= "\n" . IsgdShortUrl::shorten($v['detail_url']);
+			//$message .= "\n" . IsgdShortUrl::shorten($v['detail_url']);
+			$message .= "\n" . $v['detail_url'];
 			if(--$count<=0) break;
 		}
 		return $message;
