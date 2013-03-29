@@ -14,11 +14,11 @@ class BaiduMap{
 			$apiResult = json_decode(file_get_contents($url),true);
 			if(!count($apiResult['results'])) return '附近2000米内未找到相关地点！';
 		}
+		vendor('IsgdShortUrl');
 		foreach($apiResult['results'] as $k=>$v){
 			$message .= "\n\n" . $v['name'] . "\n" . $v['address'];
 			if ($v['telephone']) $message .= "\n" . $v['telephone'];
-			vendor('BaiduShortUrl');
-			$message .= "\n" . BaiduShortUrl::shorten($v['detail_url']);
+			$message .= "\n" . IsgdShortUrl::shorten($v['detail_url']);
 			if(--$count<=0) break;
 		}
 		return $message;
