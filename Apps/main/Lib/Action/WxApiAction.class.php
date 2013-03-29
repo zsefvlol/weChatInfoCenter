@@ -91,7 +91,7 @@ class WxApiAction extends CommonAction
 			case self::$FUNC_TYPE_NEARBY :
 				vendor('BaiduMap');
 				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastMessage['keyWord']);
-				$info = count_chars($info);
+				$info = $info;
 				break;
 			case self::$FUNC_TYPE_WEATHER :
 				vendor('BaiduMap');

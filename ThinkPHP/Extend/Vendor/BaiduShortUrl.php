@@ -2,6 +2,7 @@
 class BaiduShortUrl{
 	
 	public static function shorten($longUrl){
+		return $longUrl;
 		$ch=curl_init();
 		curl_setopt($ch,CURLOPT_URL,"http://dwz.cn/create.php");
 		curl_setopt($ch,CURLOPT_POST,true);
