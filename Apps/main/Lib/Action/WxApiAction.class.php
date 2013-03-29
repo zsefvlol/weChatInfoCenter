@@ -56,14 +56,14 @@ class WxApiAction extends CommonAction
 				}
 				else {
 					D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
-					$info = "请发送地理位置信息\n点下方小加号，选择“位置”";
+					$info = "请发送地理位置信息\n点下方小加号，选择“位置”\n";
 				}
 			break;
 			case '附近' :
 				if(!$content[1]) $info = "请输入商户类型\n如：附近 银行";
 				else{
 					D('Message')->saveMessage($message,self::$FUNC_TYPE_NEARBY,$content[1]);
-					$info = "请发送地理位置信息\n点下方小加号，选择“位置”";
+					$info = "请发送地理位置信息\n点下方小加号，选择“位置”\n如果发送后没有回应，请再发一次位置信息";
 				}
 				break;
 			default :
@@ -91,7 +91,6 @@ class WxApiAction extends CommonAction
 			case self::$FUNC_TYPE_NEARBY :
 				vendor('BaiduMap');
 				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastMessage['keyWord']);
-				$info = $info;
 				break;
 			case self::$FUNC_TYPE_WEATHER :
 				vendor('BaiduMap');
