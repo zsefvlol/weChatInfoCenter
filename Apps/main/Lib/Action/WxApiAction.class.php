@@ -47,7 +47,7 @@ class WxApiAction extends CommonAction
 	 * @return multitype:string unknown multitype:string
 	 */
 	private function handleTextMessage($message){
-		$content = explode(' ', $message['Content']);
+		$content = explode(' ', trim($message['Content']));
 		switch ($content[0]){
 			case '天气' : 
 				if($content[1])	{
