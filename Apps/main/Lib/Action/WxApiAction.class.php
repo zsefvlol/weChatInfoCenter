@@ -66,7 +66,7 @@ class WxApiAction extends CommonAction
 	private function getXmlResult($result) {
 		$msgType = $result['msgType'];
 		$toUsername = $result['toUsername'];
-		$fromUsername = $result['fromUserName'];
+		$fromUsername = $result['fromUsername'];
 		$arrContent = $result['arrContent'];
 		if (empty($msgType)) {
 			return false;
