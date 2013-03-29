@@ -37,8 +37,8 @@ class WxApiAction extends CommonAction
 	private function handleTextMessage($message){
 		$result  = array(
 				'msgType'		=>	'text',
-				'toUsername'	=>	$message['ToUserName'],
-				'fromUsername'	=>	$message['FromUserName'],
+				'toUsername'	=>	$message['FromUserName'],
+				'fromUsername'	=>	$message['ToUserName'],
 				'arrContent'	=>	array(json_encode($message))
 		);
 		return $result;
@@ -47,8 +47,8 @@ class WxApiAction extends CommonAction
 	private function handleLocationMessage($message){
 		$result  = array(
 				'msgType'		=>	'text',
-				'toUsername'	=>	$message['ToUserName'],
-				'fromUsername'	=>	$message['FromUserName'],
+				'toUsername'	=>	$message['FromUserName'],
+				'fromUsername'	=>	$message['ToUserName'],
 				'arrContent'	=>	array(json_encode($message))
 		);
 		return $result;
