@@ -39,7 +39,8 @@ class WxApiAction extends CommonAction
 				'msgType'		=>	'text',
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
-				'arrContent'	=>	array(json_encode($message))
+				'msgId'			=>	$message['MsgId'],
+				'arrContent'	=>	array($message['Content'])
 		);
 		return $result;
 	}
@@ -49,6 +50,7 @@ class WxApiAction extends CommonAction
 				'msgType'		=>	'text',
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
+				'msgId'			=>	$message['MsgId'],
 				'arrContent'	=>	array(json_encode($message))
 		);
 		return $result;
@@ -74,7 +76,7 @@ class WxApiAction extends CommonAction
 		$xmlResult = '<xml>';
 		$xmlResult .= '<ToUserName><![CDATA[' . $toUsername . ']]></ToUserName>'; //接收方帐号（收到的OpenID）
 		$xmlResult .= '<FromUserName><![CDATA[' . $fromUsername . ']]></FromUserName>'; //开发者微信号
-		$xmlResult .= '<CreateTime>' . (time() + 20) . '</CreateTime>'; //消息创建时间
+		$xmlResult .= '<CreateTime>' . time() . '</CreateTime>'; //消息创建时间
 		$xmlResult .= '<MsgType><![CDATA[' . $msgType . ']]></MsgType>'; //text,music,news
 		switch ($msgType) {
 			case 'text' :

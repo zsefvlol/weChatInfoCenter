@@ -5,7 +5,7 @@ class ResponseLogModel extends CommonModel {
 		$arr = array(
 				'fromUserName'	=>	$request['fromUsername'] ? $request['fromUsername'] : '',
 				'toUserName'	=>	$request['toUsername'] ? $request['toUsername'] : '',
-				'createTime'	=>	$request['createTime'] ? $request['createTime'] : '',
+				'createTime'	=>	$request['createTime'] ? $request['createTime'] : time(),
 				'msgType'		=>	$request['msgType'] ? $request['msgType'] : '',
 				'msgId'			=>	$request['msgId'] ? $request['msgId'] : '',
 				'responseData'		=>	$response,
