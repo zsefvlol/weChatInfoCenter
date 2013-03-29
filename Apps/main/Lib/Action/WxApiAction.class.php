@@ -26,6 +26,8 @@ class WxApiAction extends CommonAction
 				case 'location':
 					$result = $this->handleLocationMessage($request);
 					break;
+				case 'event':
+					$result = $this->handleLocationMessage($request);
 			}
 		} else {
 			$result['msgType'] = 'text';
@@ -55,6 +57,17 @@ class WxApiAction extends CommonAction
 		);
 		return $result;
 	}
+
+	private function handleEventMessage($message){
+		$result  = array(
+				'msgType'		=>	'text',
+				'toUsername'	=>	$message['FromUserName'],
+				'fromUsername'	=>	$message['ToUserName'],
+				'msgId'			=>	$message['MsgId'],
+				'arrContent'	=>	array(C('WX_DEFAULT_CONTENT'))
+		);
+		return $result;
+	}	
 
 	/**
 	 * 获得xml模板结构
