@@ -4,7 +4,7 @@ class WxApiAction extends CommonAction
 
 	public function api(){
 		//验证Token
-		//if(!$this->verifyToken()) exit('Token Verification Failed.');
+		if(!$this->verifyToken()) exit('Token Verification Failed.');
 		//网站接入验证
 		if(isset($_GET['echostr'])) exit($_GET['echostr']);
 		//处理
@@ -39,12 +39,17 @@ class WxApiAction extends CommonAction
 	}
 	
 	private function handleTextMessage($message){
+		$content = explode(' ', $message['Content']);
+		if ($content[0] == '天气'){
+			vendor('Weather');
+			$info = Weather::getWeather($content[1]);
+		}else $info = json_encode($message);
 		$result  = array(
 				'msgType'		=>	'text',
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],
-				'arrContent'	=>	array($message['Content'])
+				'arrContent'	=>	array($info)
 		);
 		return $result;
 	}

@@ -1,5 +1,5 @@
 <?php
-	//header('Content-Type: text/html; charset=utf-8');
+	header('Content-Type: text/html; charset=utf-8');
 	//应用名称
 	define("SITE_PATH", dirname(__FILE__).'/Apps/');
 	define('THINK_PATH', dirname(__FILE__) . '/ThinkPHP/');

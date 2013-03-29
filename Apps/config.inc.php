@@ -15,6 +15,6 @@ return array(
 
 	'WX_TOKEN'			=>	'hvVjiNmw2NKt3DhJ',
 	
-	'WX_DEFAULT_CONTENT'=>	'欢迎使用信息查询系统，本系统正在建设中。有问题联系zsefvlol@163.com',
+	'WX_DEFAULT_CONTENT'=>	"欢迎使用信息查询系统，本系统正在建设中。有问题联系zsefvlol@163.com\n目前支持：:\n天气：天气 北京",
 );
 ?>
