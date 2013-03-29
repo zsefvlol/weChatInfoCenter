@@ -11,6 +11,7 @@ class WxApiAction extends CommonAction
 		$result = $this->handleUserRequest();
 		$response = $this->getXmlResult($result);
 		D('ResponseLog')->saveResponseLog($result,$response);
+		echo $response;
 		exit();
 	}
 	
