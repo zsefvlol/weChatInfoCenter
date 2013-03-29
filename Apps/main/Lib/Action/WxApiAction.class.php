@@ -27,7 +27,8 @@ class WxApiAction extends CommonAction
 					$result = $this->handleLocationMessage($request);
 					break;
 				case 'event':
-					$result = $this->handleLocationMessage($request);
+					$result = $this->handleEventMessage($request);
+					break;
 			}
 		} else {
 			$result['msgType'] = 'text';
