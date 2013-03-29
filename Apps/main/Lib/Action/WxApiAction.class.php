@@ -9,7 +9,8 @@ class WxApiAction extends CommonAction
 		if(isset($_GET['echostr'])) exit($_GET['echostr']);
 		//处理
 		$result = $this->handleUserRequest();
-		echo $this->getXmlResult($result);
+		$response = $this->getXmlResult($result);
+		D('ResponseLog')->saveResponseLog($result,$response);
 		exit();
 	}
 	

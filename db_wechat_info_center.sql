@@ -166,6 +166,15 @@ CREATE TABLE `tb_raw_log` (
   `rawData` varchar(500) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `tb_response_log` (
+  `fromUserName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `toUserName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `createTime` int(11) unsigned NOT NULL,
+  `msgType` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `msgId` varchar(65) COLLATE utf8_unicode_ci NOT NULL,
+  `responseData` varchar(5000) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
