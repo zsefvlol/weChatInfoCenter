@@ -14,7 +14,7 @@ class MessageModel extends CommonModel {
 	}
 	
 	public function getLastMessage($message){
-		return $this->getMessageModel($message['FromUserName'])->order('msgId desc')->find();
+		return $this->getMessageModel($message['FromUserName'])->where(array('fromUserName'=>$message['FromUserName']))->order('msgId desc')->find();
 	}
 	
 	private function getMessageModel($openSnsId){
