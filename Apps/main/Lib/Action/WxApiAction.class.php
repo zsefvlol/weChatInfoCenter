@@ -63,9 +63,10 @@ class WxApiAction extends CommonAction
 				else {
 					$lastCity = $UserInfo->getUserInfo($message['FromUserName'],'lastWeatherCity');
 					if ($lastCity) {
+						$messageType = 'news';
 						vendor('Weather');
 						$info = Weather::getWeather($lastCity);
-						$info .= "\n查询其他地区天气\n点下方小加号，选择“位置”\n或发送：天气 北京";
+						$info[] = "查询其他地区天气，点下方小加号，选择“位置”，或发送：天气 北京";
 					}
 					else{
 						D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
@@ -154,7 +155,10 @@ class WxApiAction extends CommonAction
 				if (!$city) $info = '未找到您所在的城市';
 				else {
 					$info = Weather::getWeather($city);
-					$UserInfo->setUserInfo($message['FromUserName'],'lastWeatherCity',$city);
+					if (is_array($info)){
+						$messageType = 'news';
+						$UserInfo->setUserInfo($message['FromUserName'],'lastWeatherCity',$city);
+					}
 				}
 				break;
 			default:
