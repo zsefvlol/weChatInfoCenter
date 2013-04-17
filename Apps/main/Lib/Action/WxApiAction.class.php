@@ -86,7 +86,12 @@ class WxApiAction extends CommonAction
 				if (!$content['1']) $info = "请输入查询的内容\n如：百科 香槟";
 				else{
 					vendor('BaiduBaike');
-					$result = BaiduBaike::getSummary($content[1]);
+					if (count($content)>2){
+						array_shift($content);
+						$keyWord = implode(' ', $content);
+					}
+					else $keyWord = $content[1]; 
+					$result = BaiduBaike::getSummary($keyWord);
 					if (!$result) $info = "未查到该内容的百科\n请尝试其他关键词";
 					else{
 						$messageType = 'news';
