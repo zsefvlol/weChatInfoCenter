@@ -89,7 +89,7 @@ class WxApiAction extends CommonAction
 					$result = BaiduBaike::getSummary($content[1]);
 					if (!$result) $info = "未查到该内容的百科\n请尝试其他关键词";
 					else{
-						$messageType = 'news';
+						$messageType = 'text';
 						$info = array(
 								$result['title'],
 								$result['summary'],
