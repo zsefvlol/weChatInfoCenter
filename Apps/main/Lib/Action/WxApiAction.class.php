@@ -95,12 +95,12 @@ class WxApiAction extends CommonAction
 					if (!$result) $info = "未查到该内容的百科\n请尝试其他关键词";
 					else{
 						$messageType = 'news';
-						$info = array(
+						$info = array(array(
 								$result['title'],
 								$result['summary'],
 								$result['img'],
 								$result['baikeUrl']
-								);
+								));
 					}
 				}
 				break;
@@ -137,10 +137,10 @@ class WxApiAction extends CommonAction
 				)));
 				if (is_array($places)){
 					$messageType = 'news';
-					$info = array(array($places['title']));
+					$info[] = array($places['title']);
 					foreach ($places['places'] as $k=>$v){
 						if ($v['telephone']) $v['address'] .= "\n电话：" . $v['telephone'];
-						array_push($info,array($v['name'],$v['address'],'',$v['url']));
+						$info[] = array($v['name'],$v['address'],'',$v['url']);
 					}
 				}
 				else{
@@ -229,16 +229,16 @@ class WxApiAction extends CommonAction
 	
 			case 'news' :
 				$xmlResult .= '<ArticleCount>' . count($arrContent) . '</ArticleCount>';
-				foreach ($arrContent as $value) {
-					$xmlResult .= '<Articles>';
+				$xmlResult .= '<Articles>';
+				foreach ($arrContent as $key=>$value) {
 					$xmlResult .= '<item>';
 					$xmlResult .= '<Title><![CDATA[' . $value[0] . ']]></Title>';
 					$xmlResult .= '<Description><![CDATA[' . $value[1] . ']]></Description>';
 					$xmlResult .= '<PicUrl><![CDATA[' . $value[2] . ']]></PicUrl>';
 					$xmlResult .= '<Url><![CDATA[' . $value[3] . ']]></Url>';
 					$xmlResult .= '</item>';
-					$xmlResult .= '</Articles>';
 				}
+				$xmlResult .= '</Articles>';
 				$xmlResult .= '<FuncFlag>1</FuncFlag>';
 				break;
 			default :
