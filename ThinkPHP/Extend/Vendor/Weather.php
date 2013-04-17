@@ -19,10 +19,10 @@ class Weather{
 			$weather = json_decode( $weather, true );
 			$weather = $weather['weatherinfo'];
 		
-			$message = $weather['city'] . ' ' . $weather['date_y'] . ' ' 
-					. $weather['week'] . ' ' . $weather['weather1'] 
-					. "\n温度：" . $weather['temp1'] . ' 风向：' . $weather['wind1']
-					. "\n" . $weather['index_d'];
+			$message = $weather['city'] . ' ' . date('d日') . $weather['week'] . "\n"
+					. $weather['weather1'] . ' ' . $weather['temp1'] . ' ' . $weather['wind1']
+					. "\n明天：" . $weather['weather2'] . ' ' . $weather['wind2'] . ' ' . $weather['temp2']
+					. "\n" . $weather['index_d'] ;
 		}else{
 			$city = self::searchTree( $placeName, 'city' );
 			if( $city ){
