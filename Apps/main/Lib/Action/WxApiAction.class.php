@@ -98,6 +98,7 @@ class WxApiAction extends CommonAction
 								);
 					}
 				}
+				break;
 			default :
 				$info = json_encode($message);
 			break;
