@@ -136,6 +136,7 @@ class WxApiAction extends CommonAction
 						'Location_X'=>$message['Location_X'], 'Location_Y'=>$message['Location_Y']
 				)));
 				if (is_array($places)){
+					$messageType = 'news';
 					$info = array(array($places['title']));
 					foreach ($places['places'] as $k=>$v){
 						if ($v['telephone']) $v['address'] .= "\n电话：" . $v['telephone'];
