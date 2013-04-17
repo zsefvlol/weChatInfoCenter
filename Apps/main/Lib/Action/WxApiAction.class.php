@@ -131,7 +131,7 @@ class WxApiAction extends CommonAction
 			case self::$FUNC_TYPE_NEARBY :
 				$lastKeyWord = $UserInfo->getUserInfo($message['FromUserName'],'lastKeyWord');
 				vendor('BaiduMap');
-				$places = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord,3);
+				$places = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord);
 				$UserInfo->setUserInfo($message['FromUserName'],'lastLocation',json_encode(array(
 						'Location_X'=>$message['Location_X'], 'Location_Y'=>$message['Location_Y']
 				)));
@@ -140,7 +140,7 @@ class WxApiAction extends CommonAction
 					$info[] = array($places['title']);
 					foreach ($places['places'] as $k=>$v){
 						if ($v['telephone']) $v['address'] .= "\n电话：" . $v['telephone'];
-						$info[] = array($v['name'],$v['address'],'',$v['url']);
+						$info[] = array($v['name']."\n".$v['address'],'','',$v['url']);
 					}
 				}
 				else{
