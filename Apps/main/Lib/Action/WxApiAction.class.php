@@ -95,12 +95,12 @@ class WxApiAction extends CommonAction
 					if (!$result) $info = "未查到该内容的百科\n请尝试其他关键词";
 					else{
 						$messageType = 'news';
-						$info = array(array(
+						$info = array(
 								$result['title'],
 								$result['summary'],
 								$result['img'],
 								$result['baikeUrl']
-								));
+								);
 					}
 				}
 				break;
