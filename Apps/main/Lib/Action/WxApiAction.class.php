@@ -106,7 +106,7 @@ class WxApiAction extends CommonAction
 				}
 				break;
 			default :
-				$info = json_encode($message);
+				$info = C('WX_DEFAULT_CONTENT');
 			break;
 		}
 		$result  = array(
@@ -162,7 +162,7 @@ class WxApiAction extends CommonAction
 				}
 				break;
 			default:
-				$info = json_encode($message);
+				$info = C('WX_DEFAULT_CONTENT');
 		}
 		$result  = array(
 				'msgType'		=>	$messageType,
