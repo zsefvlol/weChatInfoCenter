@@ -1,9 +1,6 @@
 <?php
 class SohuNews{
 	public static function getFocusNews($count = 5){
-		require 'ImXMLParser.php';
-		
-		$xmlParser = new ImXMLParser();
 		$html = file_get_contents('http://news.sohu.com/rss/pfocus.xml');
 		$news = self::xml2array($html);
 		$news = $news['rss']['channel']['item'];
