@@ -63,11 +63,11 @@ class WxApiAction extends CommonAction
 					if ($lastCity) {
 						vendor('Weather');
 						$info = Weather::getWeather($lastCity);
-						$info .= "\n如果需要查找其他地区天气，请发送地理位置信息\n点下方小加号，选择“位置”\n";
+						$info .= "\n如果需要查找其他地区天气，请发送地理位置信息\n点下方小加号，选择“位置”";
 					}
 					else{
 						D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
-						$info = "请发送地理位置信息\n点下方小加号，选择“位置”\n";
+						$info = "请发送地理位置信息\n点下方小加号，选择“位置”";
 					}
 				}
 			break;
@@ -102,9 +102,9 @@ class WxApiAction extends CommonAction
 	private function handleLocationMessage($message){
 		$UserInfo = D('UserInfo');
 		$lastFunc = $UserInfo->getUserInfo($message['FromUserName'],'lastFuncType');
-		$lastKeyWord = $UserInfo->getUserInfo($message['FromUserName'],'lastKeyWord');
 		switch ($lastFunc){
 			case self::$FUNC_TYPE_NEARBY :
+				$lastKeyWord = $UserInfo->getUserInfo($message['FromUserName'],'lastKeyWord');
 				vendor('BaiduMap');
 				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord);
 				break;
