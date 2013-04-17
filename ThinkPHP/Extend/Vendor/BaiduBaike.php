@@ -9,10 +9,11 @@ class BaiduBaike{
 			$baikeUrl = 'http://baike.baidu.com'.trim(str_replace('Location:', '', $v));
 		$html = file_get_contents($baikeUrl);
 		phpQuery::newDocumentHTML($html);
-		$title = pq('h1.title')->html();
-		$summary = strip_tags(pq('.card-summary-content')->html());
-		if (!$summary) $summary = pq('div.para')->get(0)->textContent;
-		$img = pq('img.card-image')->attr('src');
+		$title = pq('h1.title:first')->html();
+		$summary = strip_tags(pq('.card-summary-content:first')->html());
+		if (!$summary) $summary = pq('div.para:first')->html();
+		$img = pq('img.card-image:first')->attr('src');
+		if (!$img) $img = pq('img.editorImg:first')->attr('data-src');
 		return $title ? array(
 				'title'=>$title,
 				'summary'=>$summary,
