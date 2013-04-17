@@ -19,7 +19,7 @@ class IndexAction extends CommonAction
 				'summary'=>$summary,
 				'img'=>$img,
 				'baikeUrl'=>$baikeUrl));
-		};
+		}
 	}
 
 }
