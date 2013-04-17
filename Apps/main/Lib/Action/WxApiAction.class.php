@@ -66,7 +66,7 @@ class WxApiAction extends CommonAction
 						$messageType = 'news';
 						vendor('Weather');
 						$info = Weather::getWeather($lastCity);
-						$info[] = "查询其他地区天气，点下方小加号，选择“位置”，或发送：天气 北京";
+						$info[] = array("查询其他地区天气，点下方小加号，选择“位置”，或发送：天气 北京");
 					}
 					else{
 						D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
