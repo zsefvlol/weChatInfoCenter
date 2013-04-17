@@ -7,9 +7,10 @@ class UserInfoModel extends CommonModel {
 				'userName'	=>	$userName,
 				'ukey'		=>	$ukey
 		))->find()){
-			$this->_getUserInfoModel($userName)->save(array(
+			$this->_getUserInfoModel($userName)->where(array(
 				'userName'	=>	$userName,
 				'ukey'		=>	$ukey,
+			))->save(array(
 				'uvalue'	=>	$uvalue
 			));
 		}
