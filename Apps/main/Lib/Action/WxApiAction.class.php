@@ -95,12 +95,12 @@ class WxApiAction extends CommonAction
 					if (!$result) $info = "未查到该内容的百科\n请尝试其他关键词";
 					else{
 						$messageType = 'news';
-						$info = array(
+						$info = array(array(
 								$result['title'],
 								$result['summary'],
 								$result['img'],
 								$result['baikeUrl']
-								);
+								));
 					}
 				}
 				break;
@@ -113,7 +113,7 @@ class WxApiAction extends CommonAction
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],
-				'arrContent'	=>	array($info)
+				'arrContent'	=>	$info
 		);
 		return $result;
 	}
@@ -165,7 +165,7 @@ class WxApiAction extends CommonAction
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],
-				'arrContent'	=>	array($info)
+				'arrContent'	=>	$info
 		);
 		return $result;
 	}
@@ -210,19 +210,18 @@ class WxApiAction extends CommonAction
 		$xmlResult .= '<MsgType><![CDATA[' . $msgType . ']]></MsgType>'; //text,music,news
 		switch ($msgType) {
 			case 'text' :
-				$value = isset($arrContent[0]) ? $arrContent[0] : "";
+				$value = isset($arrContent[0]) ? $arrContent[0] : $arrContent;
 				$xmlResult .= '<Content><![CDATA[' . $value . ']]></Content>'; //回复的消息内容
 				$xmlResult .= '<FuncFlag>0</FuncFlag>';
 				break;
 	
 			case 'music' :
 				$value = isset($arrContent[0]) ? $arrContent[0] : array();
-	
 				$xmlResult .= '<Music>';
-				$xmlResult .= '<Title><![CDATA[' . $value[0] . ']]></Title>'; //音乐标题
-				$xmlResult .= '<Description><![CDATA[' . $value[1] . ']]></Description>'; //音乐描述
-				$xmlResult .= '<MusicUrl><![CDATA[' . $value[2] . ']]></MusicUrl>'; //音乐链接
-				$xmlResult .= '<HQMusicUrl><![CDATA[' . $value[3] . ']]></HQMusicUrl>'; //高质量音乐链接，WIFI环境优先使用该链接播放音乐
+				$xmlResult .= '<Title><![CDATA[' . $arrContent[0] . ']]></Title>'; //音乐标题
+				$xmlResult .= '<Description><![CDATA[' . $arrContent[1] . ']]></Description>'; //音乐描述
+				$xmlResult .= '<MusicUrl><![CDATA[' . $arrContent[2] . ']]></MusicUrl>'; //音乐链接
+				$xmlResult .= '<HQMusicUrl><![CDATA[' . $arrContent[3] . ']]></HQMusicUrl>'; //高质量音乐链接，WIFI环境优先使用该链接播放音乐
 				$xmlResult .= '</Music>';
 				$xmlResult .= '<FuncFlag>0</FuncFlag>';
 				break;
