@@ -12,10 +12,10 @@ class BaiduBaike{
 		foreach ($header as $k=>$v)
 			if (strpos( $v , 'Location:')!==false)
 				$baikeUrl = 'http://baike.baidu.com'.trim(str_replace('Location:', '', $v));
-		return $title ? array(
+		return array(
 				'title'=>$title,
 				'summary'=>$summary,
 				'img'=>$img,
-				'baikeUrl'=>$baikeUrl) : false;
+				'baikeUrl'=>$baikeUrl);
 	}
 }
