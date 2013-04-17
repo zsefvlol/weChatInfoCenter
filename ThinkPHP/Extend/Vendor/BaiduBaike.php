@@ -10,7 +10,7 @@ class BaiduBaike{
 		$html = file_get_contents($baikeUrl);
 		phpQuery::newDocumentHTML($html);
 		$title = str_replace('百科首页 >', '', strip_tags(htmlspecialchars_decode(pq('div.crumbs')->html())));
-		$summary = str_replace('百科名片','',htmlspecialchars_decode(strip_tags(pq('.card')->contents())));
+		$summary = preg_replace('/[\t\s\r\n]+/', ' ', str_replace('百科名片','',htmlspecialchars_decode(strip_tags(pq('.card')->contents()))));
 		if (!$summary) $summary = htmlspecialchars_decode(strip_tags(pq('.content')->html()));
 		$img = pq('.img-box img')->attr('src');
 		return $title ? array(
