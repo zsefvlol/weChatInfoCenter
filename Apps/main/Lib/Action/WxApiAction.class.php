@@ -131,7 +131,7 @@ class WxApiAction extends CommonAction
 			case self::$FUNC_TYPE_NEARBY :
 				$lastKeyWord = $UserInfo->getUserInfo($message['FromUserName'],'lastKeyWord');
 				vendor('BaiduMap');
-				$places = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord);
+				$places = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord,3);
 				$UserInfo->setUserInfo($message['FromUserName'],'lastLocation',json_encode(array(
 						'Location_X'=>$message['Location_X'], 'Location_Y'=>$message['Location_Y']
 				)));
