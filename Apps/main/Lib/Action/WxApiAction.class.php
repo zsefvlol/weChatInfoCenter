@@ -126,14 +126,25 @@ class WxApiAction extends CommonAction
 	private function handleLocationMessage($message){
 		$UserInfo = D('UserInfo');
 		$lastFunc = $UserInfo->getUserInfo($message['FromUserName'],'lastLocationFuncType');
+		$messageType = 'text';
 		switch ($lastFunc){
 			case self::$FUNC_TYPE_NEARBY :
 				$lastKeyWord = $UserInfo->getUserInfo($message['FromUserName'],'lastKeyWord');
 				vendor('BaiduMap');
-				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord);
+				$places = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord);
 				$UserInfo->setUserInfo($message['FromUserName'],'lastLocation',json_encode(array(
 						'Location_X'=>$message['Location_X'], 'Location_Y'=>$message['Location_Y']
 				)));
+				if (is_array($places)){
+					$info = array(array($places['title']));
+					foreach ($places['places'] as $k=>$v){
+						if ($v['telephone']) $v['address'] .= "\n电话：" . $v['telephone'];
+						array_push($info,array($v['name'],$v['address'],'',$v['url']));
+					}
+				}
+				else{
+					$info = $places;
+				}
 				break;
 			case self::$FUNC_TYPE_WEATHER :
 				vendor('BaiduMap');
@@ -149,7 +160,7 @@ class WxApiAction extends CommonAction
 				$info = json_encode($message);
 		}
 		$result  = array(
-				'msgType'		=>	'text',
+				'msgType'		=>	$messageType,
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],

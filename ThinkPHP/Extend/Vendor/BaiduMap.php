@@ -1,11 +1,11 @@
 <?php
 class BaiduMap{
 	
-	public static function getNearby($lat,$lng,$keyWord,$count = 3){
+	public static function getNearby($lat,$lng,$keyWord,$count = 5){
 		$url = 'http://api.map.baidu.com/geocoder?output=json&location='.$lat.','.$lng.'&key='.C('BAIDU_MAP_API');
 		$apiResult = json_decode(file_get_contents($url),true);
-		$message = $apiResult['result']['formatted_address'] ? $apiResult['result']['formatted_address'] : '您';
-		$message .= '附近的'.$keyWord;
+		$title = $apiResult['result']['formatted_address'] ? $apiResult['result']['formatted_address'] : '您';
+		$title .= '附近的'.$keyWord;
 		$url = 'http://api.map.baidu.com/place/search?&query='.$keyWord.'&location='.$lat.','.$lng.'&radius=1000&output=json&key='.C('BAIDU_MAP_API');
 		$apiResult = json_decode(file_get_contents($url),true);
 		//如果1000米内没有，找2000米内
@@ -14,15 +14,18 @@ class BaiduMap{
 			$apiResult = json_decode(file_get_contents($url),true);
 			if(!count($apiResult['results'])) return '附近2000米内未找到相关地点！';
 		}
-		vendor('IsgdShortUrl');
+		$result = array('title'=>$title,'places'=>array());
+		
 		foreach($apiResult['results'] as $k=>$v){
-			$message .= "\n\n" . $v['name'] . "\n" . $v['address'];
-			if ($v['telephone']) $message .= "\n电话：" . $v['telephone'];
-			//$message .= "\n" . IsgdShortUrl::shorten($v['detail_url']);
-			$message .= "\n" . str_replace('&source=placeapi', '', $v['detail_url']);
+			array_push($result['places'], array(
+				'name'		=>	$v['name'],
+				'address'	=>	$v['address'],
+				'telephone'	=>	$v['telephone'] ? $v['telephone'] : '',
+				'url'		=>	$v['detail_url']
+			));
 			if(--$count<=0) break;
 		}
-		return $message;
+		return $result;
 	}
 	
 	public static function getCityByLocation($lat,$lng){
