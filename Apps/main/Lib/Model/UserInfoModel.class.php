@@ -3,11 +3,23 @@ class UserInfoModel extends CommonModel {
 
 	
 	public function setUserInfo($userName,$ukey,$uvalue){
-		$this->_getUserInfoModel($userName)->save(array(
+		if ($this->_getUserInfoModel($userName)->where(array(
+				'userName'	=>	$userName,
+				'ukey'		=>	$ukey
+		))->find()){
+			$this->_getUserInfoModel($userName)->save(array(
 				'userName'	=>	$userName,
 				'ukey'		=>	$ukey,
 				'uvalue'	=>	$uvalue
 			));
+		}
+		else{
+			$this->_getUserInfoModel($userName)->add(array(
+					'userName'	=>	$userName,
+					'ukey'		=>	$ukey,
+					'uvalue'	=>	$uvalue
+			));
+		}
 	}
 	
 	public function getUserInfo($userName,$ukey=''){
