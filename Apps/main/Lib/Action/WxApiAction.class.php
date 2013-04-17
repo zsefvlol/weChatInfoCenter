@@ -63,6 +63,7 @@ class WxApiAction extends CommonAction
 				else {
 					$lastCity = $UserInfo->getUserInfo($message['FromUserName'],'lastWeatherCity');
 					if ($lastCity) {
+						D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,$lastCity);
 						$messageType = 'news';
 						vendor('Weather');
 						$info = Weather::getWeather($lastCity);
@@ -92,6 +93,7 @@ class WxApiAction extends CommonAction
 						$keyWord = implode(' ', $content);
 					}
 					else $keyWord = $content[1]; 
+					D('Message')->saveMessage($message,self::$FUNC_TYPE_BAIKE,$keyWord);
 					$result = BaiduBaike::getSummary($keyWord);
 					if (!$result) $info = "未查到该内容的百科\n请尝试其他关键词";
 					else{
