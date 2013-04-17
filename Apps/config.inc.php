@@ -15,7 +15,7 @@ return array(
 
 	'WX_TOKEN'			=>	'hvVjiNmw2NKt3DhJ',
 	
-	'WX_DEFAULT_CONTENT'=>	"欢迎使用信息查询系统，本系统正在建设中。有问题联系zsefvlol@163.com\n目前支持：:\n天气：天气 北京\n周边：附近 银行",
+	'WX_DEFAULT_CONTENT'=>	"欢迎使用信息查询系统，本系统正在建设中。有问题联系zsefvlol@163.com\n目前支持：:\n查天气：\n天气 北京\n天气\n查周边：\n附近 银行\n查百科：\n百科 香槟",
 		
 	'BAIDU_MAP_API'		=>	'4d25a7442c6136e1a6c8d28ef2626a71',	
 );

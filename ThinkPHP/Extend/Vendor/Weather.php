@@ -19,7 +19,7 @@ class Weather{
 			$weather = json_decode( $weather, true );
 			$weather = $weather['weatherinfo'];
 		
-			$message = $weather['city'] . ' ' . date('d日') . $weather['week'] . "\n"
+			$message = $weather['city'] . ' ' . date('d日') .' '. $weather['week'] . "\n"
 					. $weather['weather1'] . ' ' . $weather['temp1'] . ' ' . $weather['wind1']
 					. "\n明天：" . $weather['weather2'] . ' ' . $weather['wind2'] . ' ' . $weather['temp2']
 					. "\n" . $weather['index_d'] ;
