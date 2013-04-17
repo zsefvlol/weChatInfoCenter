@@ -96,6 +96,7 @@ class WxApiAction extends CommonAction
 								$result['img'],
 								$result['baikeUrl']
 								);
+						$info = json_encode($result);
 					}
 				}
 				break;
