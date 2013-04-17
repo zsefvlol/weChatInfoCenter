@@ -11,7 +11,7 @@ class BaiduBaike{
 		phpQuery::newDocumentHTML($html);
 		$title = pq('h1.title:first')->html();
 		$summary = strip_tags(pq('.card-summary-content:first')->html());
-		if (!$summary) $summary = pq('div.para:first')->html();
+		if (!$summary) $summary = strip_tags(pq('div.para:first')->html());
 		$img = pq('img.card-image:first')->attr('src');
 		if (!$img) $img = pq('img.editorImg:first')->attr('data-src');
 		return $title ? array(
