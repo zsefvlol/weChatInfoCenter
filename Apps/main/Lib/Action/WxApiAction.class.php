@@ -4,6 +4,7 @@ class WxApiAction extends CommonAction
 
 	private static $FUNC_TYPE_WEATHER = 1;
 	private static $FUNC_TYPE_NEARBY = 2;
+	private static $FUNC_TYPE_BAIKE = 3;
 	
 	public function api(){
 		//验证Token
@@ -49,9 +50,10 @@ class WxApiAction extends CommonAction
 	private function handleTextMessage($message){
 		$content = explode(' ', preg_replace('/\s+/', ' ', trim($message['Content'])));
 		$UserInfo = D('UserInfo');
+		$messageType = 'text';
 		switch ($content[0]){
 			case '天气' : 
-				$UserInfo->setUserInfo($message['FromUserName'],'lastFuncType',self::$FUNC_TYPE_WEATHER);
+				$UserInfo->setUserInfo($message['FromUserName'],'lastLocationFuncType',self::$FUNC_TYPE_WEATHER);
 				if($content[1])	{
 					$UserInfo->setUserInfo($message['FromUserName'],'lastWeatherCity',$content[1]);
 					D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,$content[1]);
@@ -63,7 +65,7 @@ class WxApiAction extends CommonAction
 					if ($lastCity) {
 						vendor('Weather');
 						$info = Weather::getWeather($lastCity);
-						$info .= "\n如果需要查找其他地区天气，请发送地理位置信息\n点下方小加号，选择“位置”";
+						$info .= "\n查询其他地区天气\n点下方小加号，选择“位置”\n或发送：天气 北京";
 					}
 					else{
 						D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
@@ -72,7 +74,7 @@ class WxApiAction extends CommonAction
 				}
 			break;
 			case '附近' :
-				$UserInfo->setUserInfo($message['FromUserName'],'lastFuncType',self::$FUNC_TYPE_NEARBY);
+				$UserInfo->setUserInfo($message['FromUserName'],'lastLocationFuncType',self::$FUNC_TYPE_NEARBY);
 				if(!$content[1]) $info = "请输入商户类型\n如：附近 银行";
 				else{
 					$UserInfo->setUserInfo($message['FromUserName'],'lastKeyWord',$content[1]);
@@ -80,12 +82,28 @@ class WxApiAction extends CommonAction
 					$info = "请发送地理位置信息\n点下方小加号，选择“位置”\n如果发送后没有回应，请再发一次位置信息";
 				}
 				break;
+			case '百科' :
+				if (!$content['1']) $info = "请输入查询的内容\n如：百科 香槟";
+				else{
+					vendor('BaiduBaike');
+					$result = BaiduBaike::getSummary($content[1]);
+					if (!$result) $info = "未查到该内容的百科\n请尝试其他关键词";
+					else{
+						$messageType = 'news';
+						$info = array(
+								$result['title'],
+								$result['summary'],
+								$result['img'],
+								$result['baikeUrl']
+								);
+					}
+				}
 			default :
 				$info = json_encode($message);
 			break;
 		}
 		$result  = array(
-				'msgType'		=>	'text',
+				'msgType'		=>	$messageType,
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],
@@ -101,12 +119,15 @@ class WxApiAction extends CommonAction
 	 */
 	private function handleLocationMessage($message){
 		$UserInfo = D('UserInfo');
-		$lastFunc = $UserInfo->getUserInfo($message['FromUserName'],'lastFuncType');
+		$lastFunc = $UserInfo->getUserInfo($message['FromUserName'],'lastLocationFuncType');
 		switch ($lastFunc){
 			case self::$FUNC_TYPE_NEARBY :
 				$lastKeyWord = $UserInfo->getUserInfo($message['FromUserName'],'lastKeyWord');
 				vendor('BaiduMap');
 				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord);
+				$UserInfo->setUserInfo($message['FromUserName'],'lastLocation',json_encode(array(
+						'Location_X'=>$message['Location_X'], 'Location_Y'=>$message['Location_Y']
+				)));
 				break;
 			case self::$FUNC_TYPE_WEATHER :
 				vendor('BaiduMap');
