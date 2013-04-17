@@ -9,11 +9,10 @@ class BaiduBaike{
 			$baikeUrl = 'http://wapbaike.baidu.com'.trim(str_replace('Location:', '', $v));
 		$html = file_get_contents($baikeUrl);
 		phpQuery::newDocumentHTML($html);
-		$title = str_replace('百科首页 > ', '', strip_tags(htmlspecialchars_decode(pq('div.crumbs')->html())));
-		$summary = htmlspecialchars_decode(strip_tags(pq('.summary')->html()));
+		$title = str_replace('百科首页 >', '', strip_tags(htmlspecialchars_decode(pq('div.crumbs')->html())));
+		$summary = str_replace('百科名片','',htmlspecialchars_decode(strip_tags(pq('.card')->contents())));
 		if (!$summary) $summary = htmlspecialchars_decode(strip_tags(pq('.content')->html()));
 		$img = pq('.img-box img')->attr('src');
-		//if (!$img) $img = pq('img.editorImg:first')->attr('data-src');
 		return $title ? array(
 				'title'=>trim($title),
 				'summary'=>trim($summary),
