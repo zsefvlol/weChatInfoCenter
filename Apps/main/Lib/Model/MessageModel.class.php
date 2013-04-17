@@ -17,8 +17,8 @@ class MessageModel extends CommonModel {
 		return $this->getMessageModel($message['FromUserName'])->where(array('fromUserName'=>$message['FromUserName']))->order('msgId desc')->find();
 	}
 	
-	private function getMessageModel($openSnsId){
-		return D('Message_' . substr(crc32($openSnsId),-1));
+	private function getMessageModel($userName){
+		return D('Message_' . $this->_hashUserNameToInt($userName));
 	}
 }
 ?>

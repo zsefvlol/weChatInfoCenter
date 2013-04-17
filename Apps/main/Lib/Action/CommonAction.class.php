@@ -9,6 +9,7 @@ class CommonAction extends Action {
 		}
 		return $array;
 	}
+
 	
 } //class end
 

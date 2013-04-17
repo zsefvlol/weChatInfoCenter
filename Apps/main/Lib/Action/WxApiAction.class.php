@@ -47,21 +47,35 @@ class WxApiAction extends CommonAction
 	 * @return multitype:string unknown multitype:string
 	 */
 	private function handleTextMessage($message){
-		$content = explode(' ', trim($message['Content']));
+		$content = explode(' ', preg_replace('/\s+/', ' ', trim($message['Content'])));
+		$UserInfo = D('UserInfo');
 		switch ($content[0]){
 			case '天气' : 
+				$UserInfo->setUserInfo($message['FromUserName'],'lastFuncType',self::$FUNC_TYPE_WEATHER);
 				if($content[1])	{
+					$UserInfo->setUserInfo($message['FromUserName'],'lastWeatherCity',$content[1]);
+					D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,$content[1]);
 					vendor('Weather');
 					$info = Weather::getWeather($content[1]);
 				}
 				else {
-					D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
-					$info = "请发送地理位置信息\n点下方小加号，选择“位置”\n";
+					$lastCity = $UserInfo->getUserInfo($message['FromUserName'],'lastWeatherCity');
+					if ($lastCity) {
+						vendor('Weather');
+						$info = Weather::getWeather($lastCity);
+						$info .= "\n如果需要查找其他地区天气，请发送地理位置信息\n点下方小加号，选择“位置”\n";
+					}
+					else{
+						D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,'');
+						$info = "请发送地理位置信息\n点下方小加号，选择“位置”\n";
+					}
 				}
 			break;
 			case '附近' :
+				$UserInfo->setUserInfo($message['FromUserName'],'lastFuncType',self::$FUNC_TYPE_NEARBY);
 				if(!$content[1]) $info = "请输入商户类型\n如：附近 银行";
 				else{
+					$UserInfo->setUserInfo($message['FromUserName'],'lastKeyWord',$content[1]);
 					D('Message')->saveMessage($message,self::$FUNC_TYPE_NEARBY,$content[1]);
 					$info = "请发送地理位置信息\n点下方小加号，选择“位置”\n如果发送后没有回应，请再发一次位置信息";
 				}
@@ -86,18 +100,23 @@ class WxApiAction extends CommonAction
 	 * @return multitype:string unknown multitype:string
 	 */
 	private function handleLocationMessage($message){
-		$lastMessage = D('Message')->getLastMessage($message);
-		switch ($lastMessage['funcType']){
+		$UserInfo = D('UserInfo');
+		$lastFunc = $UserInfo->getUserInfo($message['FromUserName'],'lastFuncType');
+		$lastKeyWord = $UserInfo->getUserInfo($message['FromUserName'],'lastKeyWord');
+		switch ($lastFunc){
 			case self::$FUNC_TYPE_NEARBY :
 				vendor('BaiduMap');
-				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastMessage['keyWord']);
+				$info = BaiduMap::getNearby($message['Location_X'], $message['Location_Y'], $lastKeyWord);
 				break;
 			case self::$FUNC_TYPE_WEATHER :
 				vendor('BaiduMap');
 				vendor('Weather');
 				$city = BaiduMap::getCityByLocation($message['Location_X'], $message['Location_Y']);
 				if (!$city) $info = '未找到您所在的城市';
-				else $info = Weather::getWeather($city);
+				else {
+					$info = Weather::getWeather($city);
+					$UserInfo->setUserInfo($message['FromUserName'],'lastWeatherCity',$city);
+				}
 				break;
 			default:
 				$info = json_encode($message);
