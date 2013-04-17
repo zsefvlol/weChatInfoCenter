@@ -5,6 +5,7 @@ class WxApiAction extends CommonAction
 	private static $FUNC_TYPE_WEATHER = 1;
 	private static $FUNC_TYPE_NEARBY = 2;
 	private static $FUNC_TYPE_BAIKE = 3;
+	private static $FUNC_TYPE_NEWS = 4;
 	
 	public function api(){
 		//验证Token
@@ -106,6 +107,14 @@ class WxApiAction extends CommonAction
 								));
 					}
 				}
+				break;
+			case '新闻':
+				vendor('SohuNews');
+				D('Message')->saveMessage($message,self::$FUNC_TYPE_NEWS,'');
+				$news = SohuNews::getFocusNews();
+				$messageType = 'news';
+				foreach ($news as $k=>$v)
+					$info[] = array($v['content'],'',$v['pic'],$v['url']);
 				break;
 			default :
 				$info = C('WX_DEFAULT_CONTENT');
