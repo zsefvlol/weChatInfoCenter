@@ -46,7 +46,7 @@ class Weather{
 		return $message;
 	}
 	
-	private static function search( $val, $type ){
+	public static function search( $val, $type ){
 		self::initCity();
 		if( !$val || !$type ) return false;
 		$key = array_search( $val, self::$index[$type] );
