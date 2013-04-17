@@ -2,7 +2,7 @@
 class BaiduBaike{
 	public static function getSummary($keyWord){
 		vendor('phpQuery');
-		$url = 'http://baike.baidu.com/search/word?word=北京&pic=1&sug=1&enc=utf8';
+		$url = 'http://baike.baidu.com/search/word?word='.$keyWord.'&pic=1&sug=1&enc=utf8';
 		$header = get_headers($url);
 		foreach ($header as $k=>$v)
 			if (strpos( $v , 'Location:')!==false)
