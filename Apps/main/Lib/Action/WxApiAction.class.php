@@ -210,13 +210,11 @@ class WxApiAction extends CommonAction
 		$xmlResult .= '<MsgType><![CDATA[' . $msgType . ']]></MsgType>'; //text,music,news
 		switch ($msgType) {
 			case 'text' :
-				$value = isset($arrContent[0]) ? $arrContent[0] : $arrContent;
-				$xmlResult .= '<Content><![CDATA[' . $value . ']]></Content>'; //回复的消息内容
+				$xmlResult .= '<Content><![CDATA[' . $arrContent . ']]></Content>'; //回复的消息内容
 				$xmlResult .= '<FuncFlag>0</FuncFlag>';
 				break;
 	
 			case 'music' :
-				$value = isset($arrContent[0]) ? $arrContent[0] : array();
 				$xmlResult .= '<Music>';
 				$xmlResult .= '<Title><![CDATA[' . $arrContent[0] . ']]></Title>'; //音乐标题
 				$xmlResult .= '<Description><![CDATA[' . $arrContent[1] . ']]></Description>'; //音乐描述
