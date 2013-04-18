@@ -108,10 +108,19 @@ class WxApiAction extends CommonAction
 					}
 				}
 				break;
+			case '国内新闻':
 			case '新闻':
-				vendor('SohuNews');
-				D('Message')->saveMessage($message,self::$FUNC_TYPE_NEWS,'');
-				$news = SohuNews::getFocusNews();
+				vendor('BaiduNews');
+				D('Message')->saveMessage($message,self::$FUNC_TYPE_NEWS,'国内');
+				$news = BaiduNews::getCivilNews();
+				$messageType = 'news';
+				foreach ($news as $k=>$v)
+					$info[] = array($v['content'],'',$v['pic'],$v['url']);
+				break;
+			case '国际新闻':
+				vendor('BaiduNews');
+				D('Message')->saveMessage($message,self::$FUNC_TYPE_NEWS,'国际');
+				$news = BaiduNews::getInterNews();
 				$messageType = 'news';
 				foreach ($news as $k=>$v)
 					$info[] = array($v['content'],'',$v['pic'],$v['url']);
