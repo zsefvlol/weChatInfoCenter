@@ -21,7 +21,7 @@ class BaiduMap{
 				'name'		=>	$v['name'],
 				'address'	=>	$v['address'],
 				'telephone'	=>	$v['telephone'] ? $v['telephone'] : '',
-				'url'		=>	str_replace('http://api.map.baidu.com/place/', 'http://map.baidu.com/mobile/#place/', $v['detail_url'])
+				'url'		=>	str_replace('http://api.map.baidu.com/place/detail?', 'http://map.baidu.com/mobile/#place/detail/qt=inf&', $v['detail_url'])
 			));
 			if(--$count<=0) break;
 		}
