@@ -56,6 +56,7 @@ class WxApiAction extends CommonAction
 			case '天气' : 
 				$UserInfo->setUserInfo($message['FromUserName'],'lastLocationFuncType',self::$FUNC_TYPE_WEATHER);
 				if($content[1])	{
+					$messageType = 'news';
 					$UserInfo->setUserInfo($message['FromUserName'],'lastWeatherCity',$content[1]);
 					D('Message')->saveMessage($message,self::$FUNC_TYPE_WEATHER,$content[1]);
 					vendor('Weather');
