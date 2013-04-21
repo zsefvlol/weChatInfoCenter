@@ -206,7 +206,7 @@ class WxApiAction extends CommonAction
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],
-				'arrContent'	=>	array(C('WX_DEFAULT_CONTENT'))
+				'arrContent'	=>	C('WX_DEFAULT_CONTENT')
 		);
 		return $result;
 	}	
