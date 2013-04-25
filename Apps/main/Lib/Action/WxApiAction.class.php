@@ -6,6 +6,7 @@ class WxApiAction extends CommonAction
 	private static $FUNC_TYPE_NEARBY = 2;
 	private static $FUNC_TYPE_BAIKE = 3;
 	private static $FUNC_TYPE_NEWS = 4;
+	private static $FUNC_TYPE_MOVIE = 5;
 	
 	public function api(){
 		//验证Token
@@ -125,6 +126,14 @@ class WxApiAction extends CommonAction
 				$messageType = 'news';
 				foreach ($news as $k=>$v)
 					$info[] = array($v['content'],'',$v['pic'],$v['url']);
+				break;
+			case '电影' :
+				vendor('DoubanHotMovie');
+				D('Message')->saveMessage($message,self::$FUNC_TYPE_MOVIE,'');
+				$movies = DoubanHotMovie::getHotMovie();
+				$messageType = 'news';
+				foreach ($movies as $k=>$v)
+					$info[] = array($v['title'],'',$v['pic'],$v['url']);
 				break;
 			default :
 				$info = C('WX_DEFAULT_CONTENT');
