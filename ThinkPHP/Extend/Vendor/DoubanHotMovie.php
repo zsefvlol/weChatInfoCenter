@@ -12,9 +12,11 @@ class DoubanHotMovie{
 			$text .= "\n地区：" . $movies->attr('data-region');
 			$text .= "\n导演：" . $movies->attr('data-director');
 			$text .= "\n主演：" . $movies->attr('data-actors');
+			$pic = $movies->find('img')->attr('data-original');
+			if (!$pic) $pic = $movies->find('img')->attr('src');
 			$info[] =array(
 					'title'	=>	$text,
-					'pic'	=>	$movies->find('img')->attr('data-original'),
+					'pic'	=>	$pic,
 					'url'	=>	$movies->find('a')->attr('href'),
 					);
 			$movies = $movies->next();
