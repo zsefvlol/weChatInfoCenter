@@ -18,7 +18,7 @@ class BaiduNews{
 		$news = $news['rss']['channel']['item'];
 		foreach ($news as $k=>$v){
 			$formatted['url'] = $v['link'];
-			if(mb_strpos($v['description'], 'it/u='))
+			if(mb_strpos($v['description'], 'it/u=') && !mb_strpos($v['description'],'&amp;fm=55'))
 				$formatted['pic'] = urldecode(mb_substr($v['description'],mb_strpos($v['description'], 'it/u=')+5,mb_strpos($v['description'], '&fm=30')-mb_strpos($v['description'], 'it/u=')-5));
 			else $formatted['pic'] = '';
 			$formatted['content'] = $v['title'];
