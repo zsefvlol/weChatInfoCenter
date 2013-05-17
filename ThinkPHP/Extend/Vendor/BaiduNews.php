@@ -9,7 +9,7 @@ class BaiduNews{
 	}
 	
 	public static function getKeyWordNews($keyWord,$count = 5){
-		return self::getNews('http://news.baidu.com/ns?word='.mb_convert_encoding($keyWord, 'gb2312').'&tn=newsrss&sr=0&cl=2&rn=20&ct=0', $count);
+		return self::getNews('http://news.baidu.com/ns?word='.rawurlencode(mb_convert_encoding($keyWord, 'gb2312', 'utf-8')).'&tn=newsrss&sr=0&cl=2&rn=20&ct=0', $count);
 	}
 	
 	private static function getNews($url,$count){
