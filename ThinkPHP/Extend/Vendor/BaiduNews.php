@@ -8,6 +8,10 @@ class BaiduNews{
 		return self::getNews('http://news.baidu.com/n?cmd=1&class=internews&tn=rss', $count);
 	}
 	
+	public static function getKeyWordNews($keyWord,$count = 5){
+		return self::getNews('http://news.baidu.com/ns?word='.urlencode($keyWord).'&tn=newsrss&sr=0&cl=2&rn=20&ct=0', $count);
+	}
+	
 	private static function getNews($url,$count){
 		$html = file_get_contents($url);
 		$news = self::xml2array($html);
