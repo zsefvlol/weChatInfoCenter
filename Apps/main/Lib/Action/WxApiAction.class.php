@@ -122,9 +122,15 @@ class WxApiAction extends CommonAction
 					D('Message')->saveMessage($message,self::$FUNC_TYPE_NEWS,'国内');
 					$news = BaiduNews::getCivilNews();
 				}
-				$messageType = 'news';
-				foreach ($news as $k=>$v)
-					$info[] = array($v['content'],'',$v['pic'],$v['url']);
+				if ($news) {
+					$messageType = 'news';
+					foreach ($news as $k=>$v)
+						$info[] = array($v['content'],'',$v['pic'],$v['url']);
+				}else{
+					$messageType = 'text';
+					$info = '未找到'.$content[1].'相关新闻';
+				}
+				
 				break;
 			case '国际新闻':
 				vendor('BaiduNews');
