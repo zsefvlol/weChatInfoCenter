@@ -2,7 +2,7 @@
 class YoudaoTranslate{
 	public static function translate($keyWord){
 		$url = 'http://fanyi.youdao.com/openapi.do?keyfrom=weChatInfoCenter&key=594387319&type=data&doctype=json&version=1.1&q=' . $keyWord;
-		$result = json_decode(file_get_contents($result),true);
+		$result = json_decode(file_get_contents($url),true);
 		$info = array(
 				array($keyWord),
 				array($result['translation'])
