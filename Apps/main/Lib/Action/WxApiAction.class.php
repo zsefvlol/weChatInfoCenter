@@ -261,6 +261,7 @@ class WxApiAction extends CommonAction
 					array('查百科，发送“百科 香槟”'),
 					array('查新闻，发送“新闻”。按关键词搜索发送“新闻 GDP”'),
 					array('查热门电影，发送“电影”'),
+					array('中英互译，发送“翻译 beauty”。支持中英文及整句翻译。'),
 					array('北邮09信通温梦恬毕设作品，有任何问题邮件zsefvlol@163.com'),
 				);
 	}
