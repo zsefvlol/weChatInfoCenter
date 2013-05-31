@@ -13,14 +13,14 @@ class YoudaoTranslate{
 				$basicInfo .= "\n拼音：" . $result['basic']['phonetic'];
 			if ($result['basic']['explains'])
 				$basicInfo .= "\n翻译：\n" . implode("\n", $result['basic']['explains']);
-			array_push($info, $basicInfo);
+			array_push($info, array($basicInfo));
 		}
 		if ($result['web']) {
 			$webInfo = "网络释义";
 			foreach ($result['web'] as $k=>$v){
 				$webInfo .= "\n【" . $v['key'] ."】" .implode(';', $v['value']);
 			}
-			array_push($info, $webInfo);
+			array_push($info, array($webInfo));
 		}
 		return $info;
 	}
