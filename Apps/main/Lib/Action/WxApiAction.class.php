@@ -251,7 +251,7 @@ class WxApiAction extends CommonAction
 	
 	private function _getDefaultMessage(){
 		return array(
-					array("\n欢迎使用信息查询助手"),
+					array("欢迎使用信息查询助手",'',SITE_URL.'background.png'),
 					array('您可以发送(不含引号，注意空格)'),
 					array('查询天气发送“天气”'),
 					array('查询周边设施，发送“附近 银行”，再发送定位信息'),
