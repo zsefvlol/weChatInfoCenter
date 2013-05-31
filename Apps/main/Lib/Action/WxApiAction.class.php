@@ -7,7 +7,8 @@ class WxApiAction extends CommonAction
 	private static $FUNC_TYPE_BAIKE = 3;
 	private static $FUNC_TYPE_NEWS = 4;
 	private static $FUNC_TYPE_MOVIE = 5;
-	
+	private static $FUNC_TYPE_TRANS = 6;
+		
 	public function api(){
 		//验证Token
 		if(!$this->verifyToken()) exit('Token Verification Failed.');
@@ -38,8 +39,8 @@ class WxApiAction extends CommonAction
 					break;
 			}
 		} else {
-			$result['msgType'] = 'text';
-			$result['arrContent'] = array(C('WX_DEFAULT_CONTENT'));
+			$result['msgType'] = 'news';
+			$result['arrContent'] = $this->_getDefaultMessage();
 		}
 		return $result;
 	}
@@ -148,8 +149,22 @@ class WxApiAction extends CommonAction
 				foreach ($movies as $k=>$v)
 					$info[] = array($v['title'],'',$v['pic'],$v['url']);
 				break;
+			case '翻译':
+				$keyWord = trim($content[1]);
+				if($keyWord){
+					vendor('YoudaoTranslate');
+					$messageType = 'news';
+					D('Message')->saveMessage($message,self::$FUNC_TYPE_TRANS,$keyWord);
+					$info = YoudaoTranslate::translate($keyWord);
+				}
+				else{
+					$messageType = 'text';
+					$info = '请输入要翻译的内容。如：“翻译 beauty”，或“翻译 美女”';
+				} 
+				break;
 			default :
-				$info = C('WX_DEFAULT_CONTENT');
+				$messageType = 'news';
+				$info = $this->_getDefaultMessage();
 			break;
 		}
 		$result  = array(
@@ -205,7 +220,8 @@ class WxApiAction extends CommonAction
 				}
 				break;
 			default:
-				$info = C('WX_DEFAULT_CONTENT');
+				$messageType = 'news';
+				$info = $this->_getDefaultMessage();
 		}
 		$result  = array(
 				'msgType'		=>	$messageType,
@@ -224,14 +240,27 @@ class WxApiAction extends CommonAction
 	 */
 	private function handleEventMessage($message){
 		$result  = array(
-				'msgType'		=>	'text',
+				'msgType'		=>	'news',
 				'toUsername'	=>	$message['FromUserName'],
 				'fromUsername'	=>	$message['ToUserName'],
 				'msgId'			=>	$message['MsgId'],
-				'arrContent'	=>	C('WX_DEFAULT_CONTENT')
+				'arrContent'	=>	$this->_getDefaultMessage()
 		);
 		return $result;
-	}	
+	}
+	
+	private function _getDefaultMessage(){
+		return array(
+					array('欢迎使用信息查询助手'),
+					array('您可以发送（不含引号，注意空格）：'),
+					array('查询天气发送“天气”'),
+					array('查询周边设施，发送“附近 银行”，再发送定位信息'),
+					array('查百科，发送“百科 香槟”'),
+					array('查新闻，发送“新闻”。按关键词搜索发送“新闻 GDP”'),
+					array('查热门电影，发送“电影”'),
+					array('北邮09信通温梦恬毕设作品，有任何问题邮件zsefvlol@163.com'),
+				);
+	}
 
 	/**
 	 * 输出xml结果
